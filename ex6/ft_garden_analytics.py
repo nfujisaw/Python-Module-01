@@ -36,33 +36,5 @@ class Tree(Plant):
 		super().show()
 		print("Trunk diameter:", str(self.trunk_diameter) + "cm")
 
-class Vegetable(Plant):
-	def __init__(self, name, height, age, harvest_season):
-		super().__init__(name, height, age)
-		self.harvest_season = harvest_season
-		self.nutritional_value = 0
-	def grow(self):
-		super().grow()
-	def age(self):
-		super().age()
-		self.nutritional_value += 1
-	def show(self):
-		super().show()
-		print("Harvest season:", self.harvest_season)
-		print("Nutritional value:", self.nutritional_value)
 
-rose = Flower("Rose", 15.0, 10, "red")
-rose.show()
-rose.bloom()
-rose.show()
-
-oak = Tree("Oak", 200.0, 365, 5.0)
-oak.show()
-oak.produce_shade()
-
-tomato = Vegetable("Tomato", 5.0, 10, "April")
-tomato.show()
-for day in range(20):
-	tomato.grow()
-	tomato.age()
-tomato.show()
+class Seed(Flower)
