@@ -1,24 +1,31 @@
 class Plant:
-    def __init__(self, name ,height, age_days):
+    def __init__(self, name, height, age_days):
         self.name = name
         self._height = height
         self._age_days = age_days
+
     def set_height(self, height):
         if height < 0:
             print("Error, height can't be negative\nHeight update rejected")
         else:
             self._height = height
+
     def set_age(self, age_days):
         if age_days < 0:
             print("Error, age can't be negative\nAge update rejected")
         else:
             self._age_days = age_days
+
     def get_height(self):
-        return(self._height)
+        return (self._height)
+
     def get_age(self):
-        return(self._age_days)
+        return (self._age_days)
+
     def show(self):
-        print(self.name + ": " + format(round(self._height, 1)) + "cm, " + str(self._age_days) + " days old")
+        print(self.name + ": " + format(round(self._height, 1)) + "cm, "
+              + str(self._age_days) + " days old")
+
 
 rose = Plant("Rose", 15.0, 10)
 
