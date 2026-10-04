@@ -6,13 +6,15 @@ class Plant:
 
     def set_height(self, height):
         if height < 0:
-            print("Error, height can't be negative\nHeight update rejected")
+            print(f"{self.name}: Error, height can't be negative")
+            print("Height update rejected")
         else:
             self._height = height
 
     def set_age(self, age_days):
         if age_days < 0:
-            print("Error, age can't be negative\nAge update rejected")
+            print(f"{self.name}: Error, age can't be negative")
+            print("Age update rejected")
         else:
             self._age_days = age_days
 
@@ -23,19 +25,19 @@ class Plant:
         return (self._age_days)
 
     def show(self):
-        print(self.name + ": " + format(round(self._height, 1)) + "cm, "
-              + str(self._age_days) + " days old")
+        print(f"{self.name}: {round(self._height, 1)}cm, "
+              f"{self._age_days} days old")
 
 
 rose = Plant("Rose", 15.0, 10)
 
 print("=== Garden Security System ===")
-print("Plant Created:", end=" ")
+print("Plant created:", end=" ")
 rose.show()
 
 print()
 
-rose.set_height(25)
+rose.set_height(25.0)
 rose.set_age(30)
 
 print("Height updated:", str(rose.get_height()) + "cm")

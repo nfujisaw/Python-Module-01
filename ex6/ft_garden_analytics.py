@@ -14,8 +14,8 @@ class Plant:
         self._statistics.increment_age_count()
 
     def show(self):
-        print(self.name + ": " + format(round(self._height, 1)) + "cm, "
-              + str(self._age_days) + " days old")
+        print(f"{self.name}: {round(self._height, 1)}cm, "
+              f"{self._age_days} days old")
         self._statistics.increment_show_count()
 
     @staticmethod

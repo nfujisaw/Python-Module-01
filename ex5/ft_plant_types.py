@@ -11,8 +11,8 @@ class Plant:
         self._age_days += 1
 
     def show(self):
-        print(self.name + ": " + format(round(self._height, 1)) + "cm, "
-              + str(self._age_days) + " days old")
+        print(f"{self.name}: {round(self._height, 1)}cm, "
+              f"{self._age_days} days old")
 
 
 class Flower(Plant):
@@ -66,17 +66,26 @@ class Vegetable(Plant):
         print("Nutritional value:", self.nutritional_value)
 
 
+print("=== Garden Plant Types ===")
+print("=== Flower")
 rose = Flower("Rose", 15.0, 10, "red")
 rose.show()
+print("[asking the rose to bloom]")
 rose.bloom()
 rose.show()
+print()
 
+print("=== Tree")
 oak = Tree("Oak", 200.0, 365, 5.0)
 oak.show()
+print("[asking the oak to produce shade]")
 oak.produce_shade()
+print()
 
+print("=== Vegetable")
 tomato = Vegetable("Tomato", 5.0, 10, "April")
 tomato.show()
+print("[make tomato grow and age for 20 days]")
 for day in range(20):
     tomato.grow()
     tomato.age()
