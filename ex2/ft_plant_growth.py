@@ -6,8 +6,8 @@ class Plant:
         self.age_days += 1
 
     def show(self):
-        print(self.name + ": " + format(round(self.height, 1)) + "cm, "
-              + str(self.age_days) + " days old")
+        print(f"{self.name}: {round(self.height, 1)}cm, "
+              f"{self.age_days} days old")
 
 
 rose = Plant()

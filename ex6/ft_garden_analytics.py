@@ -94,6 +94,14 @@ class Seed(Flower):
         super().__init__(name, height, age, color)
         self.seeds = 0
 
+    def grow(self):
+        self._height += 30.0
+        self._statistics.increment_grow_count()
+
+    def age(self):
+        self._age_days += 20
+        self._statistics.increment_age_count()
+
     def bloom(self):
         super().bloom()
         self.seeds = 42
@@ -117,7 +125,7 @@ print("Is 400 days more than a year? -> True")
 print()
 
 print("=== Flower")
-rose = Flower("Rose", 15, 10, "red")
+rose = Flower("Rose", 15.0, 10, "red")
 rose.show()
 print("[statistics for Rose]")
 display_statistics(rose)
@@ -130,7 +138,7 @@ display_statistics(rose)
 print()
 
 print("=== Tree")
-oak = Tree("Oak", 200, 365, 5.0)
+oak = Tree("Oak", 200.0, 365, 5.0)
 oak.show()
 print("[statistics for Oak]")
 display_statistics(oak)
@@ -155,4 +163,5 @@ print()
 print("=== Anonymous")
 anonymous = Plant.create_anonymous()
 anonymous.show()
+print("[statistics for Unknown plant]")
 display_statistics(anonymous)
