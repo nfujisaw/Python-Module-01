@@ -1,30 +1,30 @@
 class Plant:
-    def __init__(self, name, height, age_days):
+    def __init__(self, name: str, height: float, age_days: int) -> None:
         self.name = name
         self._height = height
         self._age_days = age_days
 
-    def grow(self):
+    def grow(self) -> None:
         self._height += 0.8
 
-    def age(self):
+    def age(self) -> None:
         self._age_days += 1
 
-    def show(self):
+    def show(self) -> None:
         print(f"{self.name}: {round(self._height, 1)}cm, "
               f"{self._age_days} days old")
 
 
 class Flower(Plant):
-    def __init__(self, name, height, age, color):
+    def __init__(self, name: str, height: float, age: int, color: str) -> None:
         super().__init__(name, height, age)
         self.color = color
         self.bloomed = False
 
-    def bloom(self):
+    def bloom(self) -> None:
         self.bloomed = True
 
-    def show(self):
+    def show(self) -> None:
         super().show()
         print("Color:", self.color)
         if self.bloomed:
@@ -34,33 +34,35 @@ class Flower(Plant):
 
 
 class Tree(Plant):
-    def __init__(self, name, height, age, trunk_diameter):
+    def __init__(self, name: str, height: float, age: int,
+                 trunk_diameter: float) -> None:
         super().__init__(name, height, age)
         self.trunk_diameter = trunk_diameter
 
-    def produce_shade(self):
+    def produce_shade(self) -> None:
         print("Tree", self.name, "now produces a shade of", self._height,
               "cm long and", self.trunk_diameter, "cm wide")
 
-    def show(self):
+    def show(self) -> None:
         super().show()
         print("Trunk diameter:", str(self.trunk_diameter) + "cm")
 
 
 class Vegetable(Plant):
-    def __init__(self, name, height, age, harvest_season):
+    def __init__(self, name: str, height: float, age: int,
+                 harvest_season: str) -> None:
         super().__init__(name, height, age)
         self.harvest_season = harvest_season
         self.nutritional_value = 0
 
-    def grow(self):
+    def grow(self) -> None:
         super().grow()
 
-    def age(self):
+    def age(self) -> None:
         super().age()
         self.nutritional_value += 1
 
-    def show(self):
+    def show(self) -> None:
         super().show()
         print("Harvest season:", self.harvest_season)
         print("Nutritional value:", self.nutritional_value)
